@@ -1,15 +1,14 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "eslint.validate": [
-        "typescript",
-        "json"
-      ],
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.fixAll": true
-      },
-      "[typescript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
-      },
-      "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": [
+    "typescript"
+  ],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "typescript.preferences.importModuleSpecifier": "relative",
 }
