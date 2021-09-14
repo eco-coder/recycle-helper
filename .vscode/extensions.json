@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "syler.sass-indented",
+    "amatiasq.sort-imports"
+  ],
+  "unwantedRecommendations": [
+    "visualstudioexptteam.vscodeintellicode",
+    "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode"
+  ]
+}
