@@ -31,6 +31,8 @@ yarn dev # run
 # upstream = eco-coder/recycle-helper
 # origin = [your github id]/recycle-helper
 
+git remote add upstream https://github.com/eco-coder/recycle-helper.git # 최초 1회만, upstream 저장소 지정
+
 git checkout main # origin/main 브랜치로 이동
 git fetch upstream main # 원격 upstream에서 데이터를 로컬로 받아옴
 git pull upstream main # origin/main 을 upstream/main 으로 덮어 씌움
