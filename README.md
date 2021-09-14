@@ -31,6 +31,8 @@ yarn dev # run
 # upstream = eco-coder/recycle-helper
 # origin = [your github id]/recycle-helper
 
+git remote add upstream https://github.com/eco-coder/recycle-helper.git # 최초 1회만, upstream 저장소 지정
+
 git checkout main # origin/main 브랜치로 이동
 git fetch upstream main # 원격 upstream에서 데이터를 로컬로 받아옴
 git pull upstream main # origin/main 을 upstream/main 으로 덮어 씌움
@@ -46,8 +48,8 @@ git push
 ...
 
 # 첫 커밋 이후에 https://github.com/eco-coder/recycle-helper/pulls 
-# 위 링크로 가보면 compare ... 초록색 버튼이 생길 것임 누르고
-# 우선은 Create PR 하지 말고 Create Draft로 하면서 작업 하면됨
+# 위 링크로 가보면 compare & PR 초록색 버튼이 생길 것임 누르고
+# 우선은 Create PR 하지 말고 Create Draft PR로 하면서 작업 하면됨
 
 # 다시 커밋 반복
 
