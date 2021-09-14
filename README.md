@@ -48,8 +48,8 @@ git push
 ...
 
 # 첫 커밋 이후에 https://github.com/eco-coder/recycle-helper/pulls 
-# 위 링크로 가보면 compare ... 초록색 버튼이 생길 것임 누르고
-# 우선은 Create PR 하지 말고 Create Draft로 하면서 작업 하면됨
+# 위 링크로 가보면 compare & PR 초록색 버튼이 생길 것임 누르고
+# 우선은 Create PR 하지 말고 Create Draft PR로 하면서 작업 하면됨
 
 # 다시 커밋 반복
 
