@@ -36,6 +36,7 @@ git remote add upstream https://github.com/eco-coder/recycle-helper.git # 최초
 git checkout main # origin/main 브랜치로 이동
 git fetch upstream main # 원격 upstream에서 데이터를 로컬로 받아옴
 git pull upstream main # origin/main 을 upstream/main 으로 덮어 씌움
+git push # local origin/main을 포크딴 github에 동기화
 
 git branch [custom branch]
 git checkout [custom branch]
