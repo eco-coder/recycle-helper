@@ -13,7 +13,7 @@ export const GlobalContext = createContext<GlobalContextType>({} as any)
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
 
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(1)
 
   const globalContextValue = useMemo(() => ({
     count,
