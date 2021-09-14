@@ -1,12 +1,17 @@
+import React, { useContext } from 'react'
+
+import { GlobalContext } from './_app'
 import Layout from '../components/Layout'
-import React from 'react'
 import styles from '../styles/Home.module.sass'
 
 const Home = () => {
+
+  const { count } = useContext(GlobalContext)
+
   return (
     <Layout>
       <div className={styles.container} >
-        hello world
+        {count}
       </div>
     </Layout>
   )
