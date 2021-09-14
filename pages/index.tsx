@@ -1,9 +1,14 @@
+import Layout from '../components/Layout'
 import React from 'react'
+import styles from '../styles/Home.module.sass'
 
 const Home = () => {
   return (
-    <div>
-    </div>
+    <Layout>
+      <div className={styles.container} >
+        hello world
+      </div>
+    </Layout>
   )
 }
 
