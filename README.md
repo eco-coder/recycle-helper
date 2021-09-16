@@ -1,6 +1,10 @@
 # 분리수거 도우미
 KBSC 소프트웨어 대회 참가작품
 
+### 디자인, 기획
+- [UI/UX](https://www.figma.com/file/ncnVwNd1SzFVRtILzKSwI7/recycle-helper?node-id=0%3A1)
+- [기획](https://www.figma.com/file/ncnVwNd1SzFVRtILzKSwI7/recycle-helper?node-id=18%3A98)
+
 ### 기술 스택
 - React
 - Next.js
