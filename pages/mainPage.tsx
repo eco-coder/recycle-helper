@@ -5,7 +5,6 @@ import wheelHandlerF from "../handlers/wheelHander";
 
 const MainPage = () => {
     const scrollRef = useRef<any>(null);
-    const [secLength, setSecLength] = useState<any>(null);
     let bodyStyle: HTMLElement;
 
 
@@ -27,7 +26,7 @@ const MainPage = () => {
             window.removeEventListener('wheel', wheelHandler);
             bodyStyle.style.overflow = 'auto';
         }
-    }, [scrollRef, secLength])
+    }, [scrollRef])
 
     return (
         <div className={style.container} ref={scrollRef}>
