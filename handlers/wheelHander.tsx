@@ -6,14 +6,14 @@ const wheelHandlerF = (sections: any, count: number, setcount: any, moveRef: any
             let number: number = await new Promise(function (resolve, reject) {
                 setTimeout(() => {
                     resolve(count + 1)
-                }, 100);
+                }, 400);
             })
             await setcount(number);
         } else if (e.wheelDelta > 0 && count > 0) {
             let number: number = await new Promise(function (resolve, reject) {
                 setTimeout(() => {
                     resolve(count - 1)
-                }, 100);
+                }, 400);
             })
             await setcount(number);
         }
