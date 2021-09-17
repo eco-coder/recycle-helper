@@ -1,23 +1,23 @@
-const wheelHandlerF = (sections: any) => {
-    let count = 0;
-    const secLength = sections.length
-    const wheelHandler = (e: any) => {
-        if (e.wheelDelta < 0 && count < secLength - 1) {
-            count++
-            window.removeEventListener('wheel', wheelHandler);
-            window.scrollTo({ top: sections[count].offsetTop, behavior: "smooth" })
-            setTimeout(() => {
-                window.addEventListener('wheel', wheelHandler);
-            }, 400);
+const wheelHandlerF = (sections: any, count: number, setcount: any, moveRef: any) => {
+    const wheelHandler = async (e: any) => {
+
+
+        if (e.wheelDelta < 0 && count < sections.length - 1) {
+            let number: number = await new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    resolve(count + 1)
+                }, 100);
+            })
+            await setcount(number);
         } else if (e.wheelDelta > 0 && count > 0) {
-            count--
-            window.removeEventListener('wheel', wheelHandler);
-            window.scrollTo({ top: sections[count].offsetTop, behavior: "smooth" })
-            setTimeout(() => {
-                window.addEventListener('wheel', wheelHandler);
-            }, 400);
+            let number: number = await new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    resolve(count - 1)
+                }, 100);
+            })
+            await setcount(number);
         }
     }
-    return wheelHandler;
+    return wheelHandler
 }
 export default wheelHandlerF;
