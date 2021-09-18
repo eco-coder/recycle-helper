@@ -3,7 +3,7 @@ import React, {useCallback} from 'react'
 import Image from 'next/image'
 import styles from '../styles/Question.module.sass'
 
-interface Props {
+interface QuestionProps {
     question: string // 어떤 물체인가요?
     answers: string[] // ["패트병", "유리병"]
     onSelect: (question:string) => void // 버튼 눌렀을때
@@ -12,21 +12,21 @@ interface Props {
     onDown: () => void // 아래로가기 버튼 클릭
 }
 
-const tempSelect = () => {}
+const Question:React.FC<QuestionProps> = ( props:any ) => {
+    const tempSelect = () => {}
 
-const tempUp = () => {}
+    const tempUp = () => {}
 
-const tempDown = () => {}
+    const tempDown = () => {}
 
-const onClickButton = useCallback(() => {
+    const onClickButton = useCallback(() => {
 
-}, [])
+    }, [])
 
-const onClickUpButton = useCallback(() => {
+    const onClickUpButton = useCallback(() => {
 
-}, [])
-
-const Question:React.FC = ( props:any ) => {
+    }, [])
+    
     return (
         <div className={styles.container}>
             <button className={styles.upButton}>
