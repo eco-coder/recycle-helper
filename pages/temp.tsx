@@ -13,7 +13,7 @@ const temp = () => {
         <div className={styles.tempContainer}>
             <Question
                 question="어떤 물체인가요?"
-                answers={["종이", "플라스틱", "유리", "스티로폼"]}
+                answers={["종이", "플라스틱", "유리", "스티로폼", "천", "비닐"]}
                 onSelect={tempSelect}
                 selectedIndex
                 onUp={tempUp}

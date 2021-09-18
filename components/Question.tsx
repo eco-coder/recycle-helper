@@ -2,6 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 import styles from '../styles/Question.module.sass'
 
+const onClickButton = (e) => {
+    
+}
+
+const onClickUpButton = (e) => {
+    
+}
+
 const Question = ( props ) => {
     return (
         <div className={styles.container}>
@@ -28,11 +36,11 @@ const Question = ( props ) => {
             <div className={styles.answerContainer}>
                 {
                     props.answers.map(
-                        answer => (<span className={styles.answer}>{answer}</span>)
+                        answer => (<button className={styles.answer} onclick={onClickButton}>{answer}</button>)
                     )
                 }
             </div>
-            <button className={styles.upButton}>
+            <button className={styles.upButton} onClick={onClickUpButton}>
                 <Image 
                     src="/images/downArrow.png"
                     alt="home"
