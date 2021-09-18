@@ -1,0 +1,101 @@
+.container
+    background-color: #D6E5BC
+
+    section
+        height: 100vh
+
+        &:first-child
+            .container_section
+                position: relative
+                width: 100%
+                height: 70vh
+                top: 50%
+
+        &:nth-last-child(1)
+            background-color: yellow
+        &:nth-last-child(2)
+            background-color: red
+        &:nth-last-child(3)
+            background-color: yellow
+
+.container__title
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    h1
+        font-size: 40px
+        margin-top: 43px
+        font-family: Roboto
+        font-style: normal
+        font-weight: bold
+        line-height: 72px
+        text-align: center
+        letter-spacing: 0.205em
+        color: #5B5B5B
+    div
+        margin-top: 20px
+        display: flex
+        justify-content: center
+        width: 200px
+        height: 100px
+        span
+            width: 24px
+            height: 24px
+            border-left: 3px solid #000000
+            border-bottom: 3px solid #000000
+            -webkit-transform: rotate(-45deg)
+            transform: rotate(-45deg)
+            box-sizing: border-box
+
+/*일반적인 CSS 방식*/ 
+.svg_position
+    position: absolute
+    width: 102vh
+    top: 51%
+    left: 50%
+    transform: translate(-50%, -50%)
+.svg_front_position
+    position: absolute
+    top: 59%
+    left: 50%
+    width: 78vh
+    transform: translate(-50%, -50%)
+.img_position
+    position: relative
+    z-index: 2000
+    top: 76%
+    left: 50%
+    width: 517px
+    height: 325px
+    transform: translate(-50%, -50%)
+    transition: all 0.2s linear 0s
+    opacity: 1
+/*600픽셀 이하 CSS*/ 
+@media (max-width: 600px)
+    .svg_position
+        position: absolute
+        width: 50vh
+        top: 51%
+        left: 50%
+        transform: translate(-50%, -50%)
+    .svg_front_position
+        width: 43vh
+        position: absolute
+        top: 59%
+        left: 50%
+        transform: translate(-50%, -50%)
+    .img_position
+        position: absolute
+        z-index: 2000
+        top: 70% !important
+        left: 50%
+        width: 50% !important
+        height: 29% !important
+        transform: translate(-50%, -50%)
+        transition: all 0.2s linear 0s
+
+/*300픽셀 이하 CSS*/ 
+@media (max-width: 300px)
+    .facet_sidebar
+        display: block
