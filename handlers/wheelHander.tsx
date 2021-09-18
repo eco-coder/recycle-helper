@@ -2,7 +2,7 @@ const wheelHandlerF = (sections: any, count: number, setcount: any) => {
 
     const wheelHandler = async (e: any) => {
 
-        if (e.wheelDelta < 0 && count < sections.length - 1 && e.deltaY > 75) {
+        if (e.wheelDelta < 0 && count < sections.length - 1 && e.deltaY > 35) {
 
             let number: number = await new Promise(function (resolve, reject) {
                 setTimeout(() => {
@@ -10,7 +10,7 @@ const wheelHandlerF = (sections: any, count: number, setcount: any) => {
                 }, 380);
             })
             await setcount(number);
-        } else if (e.wheelDelta > 0 && count > 0 && e.deltaY < -75) {
+        } else if (e.wheelDelta > 0 && count > 0 && e.deltaY < -35) {
             let number: number = await new Promise(function (resolve, reject) {
                 setTimeout(() => {
                     resolve(count - 1)
