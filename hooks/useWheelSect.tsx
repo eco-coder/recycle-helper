@@ -30,7 +30,7 @@ const useWheel = ({ sections, setSections, count, setCount }: useWheelTypes) => 
         setSections(document.getElementsByTagName('section'));
         if (sections) {
             window.addEventListener('wheel', wheelHandler, { passive: false });
-            window.scrollTo({ top: sections[count].offsetTop, behavior: 'smooth' });
+            window.scrollTo({ top: sections[count].offsetTop, behavior: 'smooth' }); //주석제거 필요
         }
         return () => {
             window.removeEventListener('wheel', wheelHandler);

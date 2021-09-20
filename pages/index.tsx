@@ -1,14 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import Result, { resultUITypes } from "../components/Result";
 import useWheel, { useWheelTypes } from "../hooks/useWheelSect";
 
 import { GlobalContext } from './_app'
 import Image from 'next/image'
 import imageT from '../public/images/eco_icon.png'
 import styles from "../styles/mainPage.module.sass";
-
-// import Layout from '../components/Layout'
-
-
 
 const MainPage = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -58,6 +55,14 @@ const MainPage = () => {
     },
     [count, sections]);
 
+  const resultData: resultUITypes = {
+    count,
+    sections,
+    setCount,
+    clickDownEvent,
+    clickUpEvent,
+  }
+
   return (
     <div className={styles.container} ref={scrollRef}>
       <section>
@@ -77,8 +82,11 @@ const MainPage = () => {
           </div>
         </div>
         <div className={styles.container__title}>
-          <h1 style={{ textAlign: "center" }}>분리배출 도우미</h1>
-          <div><span onClick={clickDownEvent} /></div>
+          <h1 >분리배출 도우미</h1>
+          <div>
+            <span>시작하기</span>
+            <span className={styles.arrow_button} onClick={clickDownEvent} />
+          </div>
         </div>
       </section >
       <section>
@@ -92,9 +100,7 @@ const MainPage = () => {
         <button onClick={clickDownEvent}>down</button>
       </section>
       <section>
-        fdsfoisfeoisefoijsefiojseoifjsoiefj
-        <button onClick={clickUpEvent}>up</button>
-        <button onClick={clickDownEvent}>down</button>
+        <Result {...resultData} />
       </section>
     </div >
   )
