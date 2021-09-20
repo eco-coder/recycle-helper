@@ -1,62 +1,70 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { Answer, Question } from "../constants/types";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useWheel, { useWheelTypes } from "../hooks/useWheelSect";
 
-import { GlobalContext } from './_app'
+import DB from '../assets/DB.json'
 import Image from 'next/image'
+import QuestionCard from "../components/QuestionCard";
 import imageT from '../public/images/eco_icon.png'
 import styles from "../styles/mainPage.module.sass";
 
-// import Layout from '../components/Layout'
-
-
-
 const MainPage = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(0);
-  const [sections, setSections] = useState<any>(null);
-  let bannerImage: null | HTMLElement = null;
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [count, setCount] = useState(0)
+  const [sections, setSections] = useState<any>(null)
+  let bannerImage: null | HTMLElement = null
 
-  const data: useWheelTypes = {
+  const [selectedAnswers, setSelectedAnswers] = useState<Answer[]>([])
+
+  const data = useMemo(() => {
+    let st = []
+    st[0] = DB
+    for (const [index, answer] of Object.entries(selectedAnswers)) {
+      st[Number(index) + 1] = answer.question || answer.result || ''
+    }
+    return st
+  }, [selectedAnswers])
+
+  useWheel({
     sections, setSections, // sections
     count, setCount, // count
-  }
-
-  useWheel({ ...data });
+  })
 
   useEffect(() => {
-    bannerImage = document.getElementById('imageContainer');
+    bannerImage = document.getElementById('imageContainer')
     if (sections && bannerImage) {
       if (count > 0) {
-        bannerImage.style.transform = "translate(-50%, 100%)";
-        bannerImage.style.opacity = "0";
+        bannerImage.style.transform = "translate(-50%, 100%)"
+        bannerImage.style.opacity = "0"
       } else {
-        bannerImage.style.opacity = "1";
-        bannerImage.style.transform = "translate(-50%, -50%)";
+        bannerImage.style.opacity = "1"
+        bannerImage.style.transform = "translate(-50%, -50%)"
       }
     }
-  }, [sections, count]);
+  }, [sections, count])
 
 
-  const clickDownEvent = useCallback(
-    (e) => {
-      if (count < sections.length - 1) {
-        setCount(count + 1);
-      } else {
-        setCount(0);
-      }
-      window.scrollTo({ top: sections[count].offsetTop, behavior: "smooth" });
-    },
-    [count, sections]);
-  const clickUpEvent = useCallback(
-    (e) => {
-      if (count > 0) {
-        setCount(count - 1);
-      } else {
-        setCount(sections.length - 1);
-      }
-      window.scrollTo({ top: sections[count].offsetTop, behavior: "smooth" });
-    },
-    [count, sections]);
+  const clickDownEvent = useCallback(() => {
+    if (count < sections.length - 1) {
+      setCount(count + 1)
+    } else {
+      setCount(0)
+    }
+  }, [count, sections])
+
+  const clickUpEvent = useCallback(() => {
+    if (count > 0) {
+      setCount(count - 1)
+    } else {
+      setCount(sections.length - 1)
+    }
+  }, [count, sections])
+
+  const onSelect = useCallback((answer: Answer, deps: number) => {
+    const newSelectedAction = selectedAnswers.filter(_ => true)
+    newSelectedAction[deps] = answer
+    setSelectedAnswers(newSelectedAction)
+  }, [selectedAnswers])
 
   return (
     <div className={styles.container} ref={scrollRef}>
@@ -81,23 +89,27 @@ const MainPage = () => {
           <div><span onClick={clickDownEvent} /></div>
         </div>
       </section >
-      <section>
-        fdsfoisfeoisefoijsefiojseoifjsoiefj
-        <button onClick={clickUpEvent}>up</button>
-        <button onClick={clickDownEvent}>down</button>
-      </section>
-      <section>
-        fdsfoisfeoisefoijsefiojseoifjsoiefj
-        <button onClick={clickUpEvent}>up</button>
-        <button onClick={clickDownEvent}>down</button>
-      </section>
-      <section>
-        fdsfoisfeoisefoijsefiojseoifjsoiefj
-        <button onClick={clickUpEvent}>up</button>
-        <button onClick={clickDownEvent}>down</button>
-      </section>
+      {data.map((v, i) =>
+        <>
+          <section key={i.toString()} >
+            {typeof v !== 'string'
+              ?
+              <QuestionCard
+                question={v}
+                deps={i}
+                selectedAnswer={null}
+                onSelect={onSelect}
+                onUp={clickUpEvent}
+                onDown={clickDownEvent}
+              />
+              :
+              <div>{v}</div>
+            }
+          </section>
+        </>
+      )}
     </div >
   )
 }
 
-export default MainPage;
+export default MainPage
