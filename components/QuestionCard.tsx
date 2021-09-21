@@ -35,16 +35,20 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
             <div className={styles.questionContainer} >
                 <div style={{ marginBottom: 60 }} >
                     <span className={styles.question}>{props.question.name}</span>
-                    <Image
-                        className={styles.character}
-                        src="/images/cat.png"
-                        alt="cat"
-                        width={144}
-                        height={144}
-                    />
+                    <div className={styles.character}>
+                        <Image
+                            src="/images/cat.png"
+                            alt="cat"
+                            width={144}
+                            height={144}
+                        />
+                    </div>
                 </div>
+
+                <div className={styles.copyright}>이미지 출처 : pngtree</div>
+                
                 {/* 답변 개수 : 2, 3, 5, 6개 */}
-                <div >
+                <div className={styles.answerContainer}>
                     {question.answers.map((answer, index) =>
                         <button
                             key={index}
