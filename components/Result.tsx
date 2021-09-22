@@ -1,22 +1,15 @@
+import { Answer, resultUITypes } from "../constants/types";
 import React, { useCallback } from "react";
 
 import Image from 'next/image'
 import sampleImg from '../public/images/man-4603859_1920.png'
 import styles from "../styles/mainPage.module.sass";
 
-export interface resultUITypes {
-    setCount: Function,
-    count: number,
-    sections: HTMLSelectElement,
-    clickUpEvent: any,
-    clickDownEvent: any,
-}
-
 const Result = (data: resultUITypes) => {
-    const { setCount, count, sections, clickUpEvent, clickDownEvent } = data;
+    const { onUp, onDown, result } = data;
     return (
         <>
-            <span className={styles.arrow_button} onClick={clickUpEvent} />
+            <span className={styles.arrow_button} onClick={onUp} />
             <div className={styles.container_result}>
                 <div className={styles.image_result}>
                     {/* 238px 모바일 부분 */}
@@ -24,7 +17,7 @@ const Result = (data: resultUITypes) => {
                 </div>
                 <div className={styles.context_result}>
                     <h1>
-                        유리 > 음식물 안묻음 > 유리병
+                        {result}
                     </h1>
                     <div>
                         라벨이 씌워져 있는 패트병은
@@ -32,7 +25,7 @@ const Result = (data: resultUITypes) => {
                     </div>
                 </div>
             </div>
-            <span className={styles.arrow_button} onClick={clickDownEvent} />
+            <span className={styles.arrow_button} onClick={onDown} />
         </>
     )
 }

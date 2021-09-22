@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import Result, { resultUITypes } from "../components/Result";
 import useWheel, { useWheelTypes } from "../hooks/useWheelSect";
 
 import { GlobalContext } from './_app'
 import Image from 'next/image'
+import Result from "../components/Result";
+import fakeData from '../assets/DB.json'
 import imageT from '../public/images/eco_icon.png'
+import { resultUITypes } from "../constants/types";
 import styles from "../styles/mainPage.module.sass";
 
 const MainPage = () => {
@@ -21,6 +23,9 @@ const MainPage = () => {
   useWheel({ ...data });
 
   useEffect(() => {
+
+    console.log(fakeData)
+
     bannerImage = document.getElementById('imageContainer');
     if (sections && bannerImage) {
       if (count > 0) {
@@ -35,7 +40,7 @@ const MainPage = () => {
 
 
   const clickDownEvent = useCallback(
-    (e) => {
+    (): void => {
       if (count < sections.length - 1) {
         setCount(count + 1);
       } else {
@@ -45,7 +50,7 @@ const MainPage = () => {
     },
     [count, sections]);
   const clickUpEvent = useCallback(
-    (e) => {
+    (): void => {
       if (count > 0) {
         setCount(count - 1);
       } else {
@@ -55,12 +60,17 @@ const MainPage = () => {
     },
     [count, sections]);
 
+  const selectedAnswers = [{
+    name: "비닐",
+    result: "내용물을 비우고, 한 봉투에 담아 버려주세요."
+  }] // 데이터 변환
+
+
   const resultData: resultUITypes = {
-    count,
-    sections,
-    setCount,
-    clickDownEvent,
-    clickUpEvent,
+    selectedAnswers,
+    result: '라벨이 씌어져 있는 페트병', // 데이터 변환
+    onUp: clickUpEvent,
+    onDown: clickDownEvent,
   }
 
   return (
