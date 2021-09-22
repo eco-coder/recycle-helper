@@ -33,24 +33,24 @@ $font-small: 16px
         cursor: pointer
 
 .questionContainer
-    display: flex
-    flex-direction: column
-    justify-content: space-between
 
 .question
     background-color: #6ec160
     font-size: 32px
     color: #FFFFFF
     padding: 24px 48px
-    margin: 10px
+    margin: 10px 0vw 10px 10vw
+    max-width: calc(80vw - 2*144px)
     border-radius: 32px
     display: inline-block
     position: relative
-    left: 72px
 
 .character
     display: inline-block
     position: relative
+    right: 72px
+    width: 144px
+    height: 144px
     
 
 .copyright
@@ -63,6 +63,7 @@ $font-small: 16px
 
 .answerContainer
     text-align: center
+    width: 60vw
 
 .answer
     background-color: #AECE77
@@ -76,41 +77,18 @@ $font-small: 16px
     &:hover
         cursor: pointer
 
-@media screen and (min-width: 800px) and (max-width: 1200px)
-    .container
-        padding: 0 10vw
-
-    .question
-        font-size: 24px
-        left: 50px
-        max-width: 50vw
-
-    .character
-        width: 100px
-        height: 100px
-        right: 16px
-
-    .answer
-        font-size: 24px
-
 @media screen and (max-width: 800px) 
     .container
         padding: 0
 
     .question
-        max-width: 50vw
-        font-size: 16px
-        left: 40px
+        font-size: 24px
 
     .character
         width: 80px
         height: 80px
-        left: 0
         right: 40px
-    
-    .copyright
-        display: block
-        top: 0
 
     .answer
-        font-size: 16px    
+        font-size: 24px  
+        height: 48px
