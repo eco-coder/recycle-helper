@@ -33,8 +33,8 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                 />
             </button>
             <div className={styles.questionContainer} >
-                <div style={{ marginBottom: 60 }} >
-                    <span className={styles.question}>{props.question.name}</span>
+                <div style={{ marginBottom: 60, textAlign: 'center' }} >
+                    <div className={styles.question}>{props.question.name}</div>
                     <div className={styles.character}>
                         <Image
                             src="/images/cat.png"
@@ -43,9 +43,10 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                             height={144}
                         />
                     </div>
+                    <div className={styles.copyright}>이미지 출처 : pngtree</div>
                 </div>
 
-                <div className={styles.copyright}>이미지 출처 : pngtree</div>
+                
                 
                 {/* 답변 개수 : 2, 3, 5, 6개 */}
                 <div className={styles.answerContainer}>
