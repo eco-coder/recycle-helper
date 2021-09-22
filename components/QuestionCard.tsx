@@ -43,7 +43,6 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                             height={144}
                         />
                     </div>
-                    <div className={styles.copyright}>이미지 출처 : pngtree</div>
                 </div>
 
                 
@@ -56,7 +55,7 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                             className={styles.answer}
                             style={{
                                 backgroundColor: selectedAnswer?.name === answer.name ? '#6EC160' : '#AECE77',
-                                color: selectedAnswer?.name === answer.name ? '#fff' : '#4E4E4E'
+                                color: selectedAnswer?.name === answer.name ? '#ffffff' : '#4E4E4E'
                             }}
                             onClick={() => onSelect(answer, deps)}
                         >
@@ -73,6 +72,7 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                     height={29}
                 />
             </button>}
+            <div className={styles.copyright}>이미지 출처 : pngtree</div>
         </div>
     )
 }

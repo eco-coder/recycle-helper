@@ -1,8 +1,11 @@
+$font-large: 32px
+$font-small: 16px
+    
 .container
     background-color: #D6E5BC
     width: 100vw
     height: 100vh
-    padding: 0vw 20vw
+    padding: 0 10vw
     display: flex
     box-sizing: border-box
     position: relative
@@ -43,20 +46,20 @@
     border-radius: 32px
     display: inline-block
     position: relative
-    left: 144px
+    left: 72px
 
 .character
     display: inline-block
     position: relative
-    left: 72px
+    
 
 .copyright
     font-size: 9px
     color: #b8b8b8
     text-align: right
-    display: inline-block
-    position: relative
-    top: 32px
+    position: absolute
+    bottom: 10vw
+    right: 10vw
 
 .answerContainer
     text-align: center
@@ -71,5 +74,43 @@
     margin: 10px
     border-radius: 20px
     &:hover
-        background-color: #AECE77
         cursor: pointer
+
+@media screen and (min-width: 800px) and (max-width: 1200px)
+    .container
+        padding: 0 10vw
+
+    .question
+        font-size: 24px
+        left: 50px
+        max-width: 50vw
+
+    .character
+        width: 100px
+        height: 100px
+        right: 16px
+
+    .answer
+        font-size: 24px
+
+@media screen and (max-width: 800px) 
+    .container
+        padding: 0
+
+    .question
+        max-width: 50vw
+        font-size: 16px
+        left: 40px
+
+    .character
+        width: 80px
+        height: 80px
+        left: 0
+        right: 40px
+    
+    .copyright
+        display: block
+        top: 0
+
+    .answer
+        font-size: 16px    
