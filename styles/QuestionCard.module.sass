@@ -2,13 +2,12 @@
     background-color: #D6E5BC
     width: 100vw
     height: 100vh
-    padding: 0vw 20vw
+    padding: 0 10vw
     display: flex
     box-sizing: border-box
     position: relative
     align-items: center
     justify-content: center
-.homeButton
 
 .upButton
     position: absolute
@@ -31,25 +30,45 @@
         cursor: pointer
 
 .questionContainer
-    display: flex
-    flex-direction: column
-    justify-content: space-between
+    text-align: center
 
 .question
     background-color: #6ec160
     font-size: 32px
     color: #FFFFFF
-    height: 32px
-    padding: 15px 40px
-    margin: 10px
+    padding: 24px 48px
+    margin: 10px 0vw 10px 10vw
+    max-width: 40vw
     border-radius: 32px
+    display: inline-block
+    position: relative
 
 .character
+    display: inline-block
     position: relative
-    top: 24px
-    right: 64px
+    right: 72px
+    width: 144px
+    height: 144px
+    
+
+.copyright
+    font-size: 9px
+    color: #b8b8b8
+    text-align: right
+    position: absolute
+    bottom: 10vw
+    right: 10vw
+
+.answerContainer
+    text-align: center
+    width: 70vw
+    margin: 0 20vw
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
 
 .answer
+    transition: 0.3s
     background-color: #AECE77
     font-size: 32px
     color: #4E4E4E
@@ -59,5 +78,50 @@
     margin: 10px
     border-radius: 20px
     &:hover
-        background-color: #AECE77
         cursor: pointer
+        background-color: #6ec160
+        color: #fff
+
+.answerSelected
+    transition: 0.3s
+    background-color: #6ec160
+    font-size: 32px
+    color: #fff
+    height: 64px
+    border: none
+    padding: 10px 40px
+    margin: 10px
+    border-radius: 20px
+    &:hover
+        cursor: pointer
+
+@media screen and (max-width: 800px) 
+    .container
+        padding: 0
+
+    .questionContainer
+        width: 100vw
+        margin: 0 0 0 0
+
+    .question
+        padding: 12px 32px
+        font-size: 20px
+
+    .character
+        width: 80px
+        height: 80px
+        right: 40px
+
+    .answerContainer
+        width: 90vw
+        margin: 0 5vw
+
+    .answer
+        font-size: 20px  
+        height: 48px
+        width: 90vw
+
+    .answerSelected
+        font-size: 20px
+        height: 48px
+        width: 90vw

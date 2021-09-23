@@ -33,26 +33,26 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                 />
             </button>
             <div className={styles.questionContainer} >
-                <div style={{ marginBottom: 60 }} >
-                    <span className={styles.question}>{props.question.name}</span>
-                    <Image
-                        className={styles.character}
-                        src="/images/cat.png"
-                        alt="cat"
-                        width={144}
-                        height={144}
-                    />
+                <div style={{ marginBottom: 60, textAlign: 'center' }} >
+                    <div className={styles.question}>{props.question.name}</div>
+                    <div className={styles.character}>
+                        <Image
+                            src="/images/cat.png"
+                            alt="cat"
+                            width={144}
+                            height={144}
+                        />
+                    </div>
                 </div>
+
+                
+                
                 {/* 답변 개수 : 2, 3, 5, 6개 */}
-                <div >
+                <div className={styles.answerContainer}>
                     {question.answers.map((answer, index) =>
                         <button
                             key={index}
-                            className={styles.answer}
-                            style={{
-                                backgroundColor: selectedAnswer?.name === answer.name ? '#6EC160' : '#AECE77',
-                                color: selectedAnswer?.name === answer.name ? '#fff' : '#4E4E4E'
-                            }}
+                            className={selectedAnswer?.name === answer.name ? styles.answerSelected : styles.answer}
                             onClick={() => onSelect(answer, deps)}
                         >
                             {answer.name}
@@ -68,6 +68,7 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                     height={29}
                 />
             </button>}
+            <div className={styles.copyright}>이미지 출처 : pngtree</div>
         </div>
     )
 }
