@@ -52,11 +52,7 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                     {question.answers.map((answer, index) =>
                         <button
                             key={index}
-                            className={styles.answer}
-                            style={{
-                                backgroundColor: selectedAnswer?.name === answer.name ? '#6EC160' : '#AECE77',
-                                color: selectedAnswer?.name === answer.name ? '#ffffff' : '#4E4E4E'
-                            }}
+                            className={selectedAnswer?.name === answer.name ? styles.answerSelected : styles.answer}
                             onClick={() => onSelect(answer, deps)}
                         >
                             {answer.name}

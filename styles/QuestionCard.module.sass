@@ -61,16 +61,32 @@
 
 .answerContainer
     text-align: center
-    width: 60vw
+    width: 70vw
     margin: 0 20vw
     display: flex
     flex-wrap: wrap
     justify-content: center
 
 .answer
+    transition: 0.3s
     background-color: #AECE77
     font-size: 32px
     color: #4E4E4E
+    height: 64px
+    border: none
+    padding: 10px 40px
+    margin: 10px
+    border-radius: 20px
+    &:hover
+        cursor: pointer
+        background-color: #6ec160
+        color: #fff
+
+.answerSelected
+    transition: 0.3s
+    background-color: #6ec160
+    font-size: 32px
+    color: #fff
     height: 64px
     border: none
     padding: 10px 40px
@@ -95,6 +111,9 @@
         width: 80px
         height: 80px
         right: 40px
+
+    .answerContainer
+        width: 95vw
 
     .answer
         font-size: 20px  
