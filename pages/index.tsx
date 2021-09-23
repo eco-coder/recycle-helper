@@ -4,8 +4,12 @@ import useWheel, { useWheelTypes } from "../hooks/useWheelSect";
 
 import DB from '../assets/DB.json'
 import Image from 'next/image'
+
 import QuestionCard from "../components/QuestionCard";
+import Result from "../components/Result";
+import fakeData from '../assets/DB.json'
 import imageT from '../public/images/eco_icon.png'
+import { resultUITypes } from "../constants/types";
 import styles from "../styles/mainPage.module.sass";
 
 const MainPage = () => {
@@ -25,13 +29,15 @@ const MainPage = () => {
     return st
   }, [selectedAnswers])
 
+
   useWheel({
     sections, setSections, // sections
     count, setCount, // count
   })
 
   useEffect(() => {
-    bannerImage = document.getElementById('imageContainer')
+
+    bannerImage = document.getElementById('imageContainer');
     if (sections && bannerImage) {
       if (count > 0) {
         bannerImage.style.transform = "translate(-50%, 100%)"
@@ -66,6 +72,15 @@ const MainPage = () => {
     setSelectedAnswers(newSelectedAction)
   }, [selectedAnswers])
 
+
+
+  const resultData: resultUITypes = {
+    selectedAnswers,
+    result: '라벨이 씌어져 있는 페트병', // 데이터 변환
+    onUp: clickUpEvent,
+    onDown: clickDownEvent,
+  }
+
   return (
     <div className={styles.container} ref={scrollRef}>
       <section>
@@ -85,8 +100,11 @@ const MainPage = () => {
           </div>
         </div>
         <div className={styles.container__title}>
-          <h1 style={{ textAlign: "center" }}>분리배출 도우미</h1>
-          <div><span onClick={clickDownEvent} /></div>
+          <h1 >분리배출 도우미</h1>
+          <div>
+            <span>시작하기</span>
+            <span className={styles.arrow_button} onClick={clickDownEvent} />
+          </div>
         </div>
       </section >
       {data.map((v, i) =>
