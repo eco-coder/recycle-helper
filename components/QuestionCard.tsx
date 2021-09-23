@@ -45,13 +45,13 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                     </div>
                 </div>
 
-                
-                
+
+
                 {/* 답변 개수 : 2, 3, 5, 6개 */}
                 <div className={styles.answerContainer}>
                     {question.answers.map((answer, index) =>
                         <button
-                            key={index}
+                            key={index.toString()}
                             className={selectedAnswer?.name === answer.name ? styles.answerSelected : styles.answer}
                             onClick={() => onSelect(answer, deps)}
                         >

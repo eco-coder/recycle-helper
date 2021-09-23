@@ -1,16 +1,13 @@
-import { Answer, Question } from "../constants/types";
+import { Answer, Question, Result } from "../constants/types";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useWheel, { useWheelTypes } from "../hooks/useWheelSect";
 
 import DB from '../assets/DB.json'
 import Image from 'next/image'
-
 import QuestionCard from "../components/QuestionCard";
-import Result from "../components/Result";
-import fakeData from '../assets/DB.json'
+import ResultCard from "../components/ResultCard";
 import imageT from '../public/images/eco_icon.png'
-import { resultUITypes } from "../constants/types";
-import styles from "../styles/mainPage.module.sass";
+import styles from "../styles/Home.module.sass";
 
 const MainPage = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -24,7 +21,7 @@ const MainPage = () => {
     let st = []
     st[0] = DB
     for (const [index, answer] of Object.entries(selectedAnswers)) {
-      st[Number(index) + 1] = answer.question || answer.result || ''
+      st[Number(index) + 1] = answer.question || answer.result as Result
     }
     return st
   }, [selectedAnswers])
@@ -73,14 +70,6 @@ const MainPage = () => {
   }, [selectedAnswers])
 
 
-
-  const resultData: resultUITypes = {
-    selectedAnswers,
-    result: '라벨이 씌어져 있는 페트병', // 데이터 변환
-    onUp: clickUpEvent,
-    onDown: clickDownEvent,
-  }
-
   return (
     <div className={styles.container} ref={scrollRef}>
       <section>
@@ -107,14 +96,15 @@ const MainPage = () => {
           </div>
         </div>
       </section >
+
       {data.map((v, i) =>
         <>
           <section key={i.toString()} >
-            {typeof v !== 'string'
+            {/* @ts-ignore */}
+            {!v.image
               ?
               <QuestionCard
-                key={i.toString()}
-                question={v}
+                question={v as Question}
                 deps={i}
                 selectedAnswer={selectedAnswers[i]}
                 onSelect={onSelect}
@@ -122,7 +112,11 @@ const MainPage = () => {
                 onDown={clickDownEvent}
               />
               :
-              <div>{v}</div>
+              <ResultCard
+                result={v as Result}
+                onUp={clickUpEvent}
+                onInit={() => { }}
+              />
             }
           </section>
         </>
