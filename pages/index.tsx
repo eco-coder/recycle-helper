@@ -113,9 +113,10 @@ const MainPage = () => {
             {typeof v !== 'string'
               ?
               <QuestionCard
+                key={i.toString()}
                 question={v}
                 deps={i}
-                selectedAnswer={null}
+                selectedAnswer={selectedAnswers[i]}
                 onSelect={onSelect}
                 onUp={clickUpEvent}
                 onDown={clickDownEvent}
