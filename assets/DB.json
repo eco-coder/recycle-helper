@@ -13,11 +13,19 @@
                             "answers": [
                                 {
                                     "name": "신문",
-                                    "result": "차곡차곡 쌓아 종이류에 배출해주세요."
+                                    "result": {
+                                        "name": "신문",
+                                        "content": "차곡차곡 쌓아 종이류에 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "책자, 노트",
-                                    "result": "종이와 다른 재질(스프링 등)을 제거한 후 종이류로 배출해주세요."
+                                    "result": {
+                                        "name": "책자, 노트",
+                                        "content": "종이와 다른 재질(스프링 등)을 제거한 후 종이류로 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "영수증",
@@ -26,37 +34,65 @@
                                         "answers": [
                                             {
                                                 "name": "종이에요",
-                                                "result": "종이류로 배출해주세요."
+                                                "result": {
+                                                    "name": "종이 영수증",
+                                                    "content": "종이류로 배출해주세요.",
+                                                    "image": "test value"
+                                                }
                                             },
                                             {
                                                 "name": "감열지에요",
-                                                "result": "일반 쓰레기로 벼려주세요."
+                                                "result": {
+                                                    "name": "감열지 영수증",
+                                                    "content": "일반 쓰레기로 벼려주세요.",
+                                                    "image": "test value"
+                                                }
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "name": "코팅된 종이",
-                                    "result": "일반 쓰레기로 버려주세요"
+                                    "result": {
+                                        "name": "",
+                                        "content": "일반 쓰레기로 버려주세요",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "벽지",
-                                    "result": "일반 쓰레기로 버려주세요"
+                                    "result": {
+                                        "name": "",
+                                        "content": "일반 쓰레기로 버려주세요",
+                                        "image": "test value"
+                                    }
                                 }
                             ]
                         }
                     },
                     {
                         "name": "종이팩 용기",
-                        "result": "내용물을 씻은 후 펼쳐 종이팩 전용수거함에 버려주세요. 가급적 끈 등으로 묶어 종이류 수거함으로 배출해주세요."
+                        "result": {
+                            "name": "",
+                            "content": "내용물을 씻은 후 펼쳐 종이팩 전용수거함에 버려주세요. 가급적 끈 등으로 묶어 종이류 수거함으로 배출해주세요.",
+                            "image": "test value"
+                        }
                     },
                     {
                         "name": "종이컵",
-                        "result": "이물질을 제거하여 종이류로 배출해주세요. 컵이 물들었을 경우 일반 쓰레기로 버려주세요."
+                        "result": {
+                            "name": "",
+                            "content": "이물질을 제거하여 종이류로 배출해주세요. 컵이 물들었을 경우 일반 쓰레기로 버려주세요.",
+                            "image": "test value"
+                        }
                     },
                     {
                         "name": "상자류",
-                        "result": "종이와 다른 재질(테이프 등)을 제거한 후 종이류로 배출해주세요."
+                        "result": {
+                            "name": "",
+                            "content": "종이와 다른 재질(테이프 등)을 제거한 후 종이류로 배출해주세요.",
+                            "image": "test value"
+                        }
                     },
                     {
                         "name": "휴지, 타올 등",
@@ -65,11 +101,19 @@
                             "answers": [
                                 {
                                     "name": "휴지",
-                                    "result": "일반 쓰레기로 버려주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "일반 쓰레기로 버려주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "물티슈",
-                                    "result": "일반 쓰레기로 버려주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "일반 쓰레기로 버려주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "키친타올",
@@ -78,11 +122,19 @@
                                         "answers": [
                                             {
                                                 "name": "네",
-                                                "result": "일반 쓰레기로 버려주세요."
+                                                "result": {
+                                                    "name": "",
+                                                    "content": "일반 쓰레기로 버려주세요.",
+                                                    "image": "test value"
+                                                }
                                             },
                                             {
                                                 "name": "아니오",
-                                                "result": "종이류로 배출해주세요."
+                                                "result": {
+                                                    "name": "",
+                                                    "content": "종이류로 배출해주세요.",
+                                                    "image": "test value"
+                                                }
                                             }
                                         ]
                                     }
@@ -92,7 +144,11 @@
                     },
                     {
                         "name": "나무, 식물",
-                        "result": "일반 쓰레기로 버려주세요."
+                        "result": {
+                            "name": "",
+                            "content": "일반 쓰레기로 버려주세요.",
+                            "image": "test value"
+                        }
                     }
                 ]
             }
@@ -109,22 +165,38 @@
                             "answers": [
                                 {
                                     "name": "철캔, 알류미늄캔",
-                                    "result": "내용물을 비우고 찌그러뜨려, 가급적 재질을 분류하여 캔류로 배출해주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "내용물을 비우고 찌그러뜨려, 가급적 재질을 분류하여 캔류로 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "부탄가스",
-                                    "result": "구멍을 뚫고 찌그러뜨려 캔류로 배출해주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "구멍을 뚫고 찌그러뜨려 캔류로 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "스프레이류",
-                                    "result": "내용물을 비우고, 가급적 재질을 분류하여 캔류로 배출해주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "내용물을 비우고, 가급적 재질을 분류하여 캔류로 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 }
                             ]
                         }
                     },
                     {
                         "name": "고철류",
-                        "result": "가급적 재질을 분류하여 고철류로 배출해주세요."
+                        "result": {
+                            "name": "",
+                            "content": "가급적 재질을 분류하여 고철류로 배출해주세요.",
+                            "image": "test value"
+                        }
                     }
                 ]
             }
@@ -136,7 +208,11 @@
                 "answers": [
                     {
                         "name": "네",
-                        "result": "일반 쓰레기로 버려주세요"
+                        "result": {
+                            "name": "",
+                            "content": "일반 쓰레기로 버려주세요",
+                            "image": "test value"
+                        }
                     },
                     {
                         "name": "아니오",
@@ -150,7 +226,11 @@
                                         "answers": [
                                             {
                                                 "name": "네",
-                                                "result": "TODO"
+                                                "result": {
+                                                    "name": "",
+                                                    "content": "TODO",
+                                                    "image": "test value"
+                                                }
                                             },
                                             {
                                                 "name": "아니오",
@@ -159,11 +239,19 @@
                                                     "answers": [
                                                         {
                                                             "name": "네",
-                                                            "result": "유리병류로 배출해주세요."
+                                                            "result": {
+                                                                "name": "",
+                                                                "content": "유리병류로 배출해주세요.",
+                                                                "image": "test value"
+                                                            }
                                                         },
                                                         {
                                                             "name": "아니오",
-                                                            "result": "근처 슈퍼, 대형마트 등의 소매점에 반환할 수 있습니다! 혹은 유리병류로 배출해주세요."
+                                                            "result": {
+                                                                "name": "",
+                                                                "content": "근처 슈퍼, 대형마트 등의 소매점에 반환할 수 있습니다! 혹은 유리병류로 배출해주세요.",
+                                                                "image": "test value"
+                                                            }
                                                         }
                                                     ]
                                                 }
@@ -173,7 +261,11 @@
                                 },
                                 {
                                     "name": "아니오",
-                                    "result": "일반 쓰레기로 버려주세요"
+                                    "result": {
+                                        "name": "",
+                                        "content": "일반 쓰레기로 버려주세요",
+                                        "image": "test value"
+                                    }
                                 }
                             ]
                         }
@@ -193,25 +285,41 @@
                             "answers": [
                                 {
                                     "name": "네",
-                                    "result": "내용물을 비우고, 비닐 등을 제거 후 찌그러뜨려 뚜껑을 닫아 가급적 투명 페트병류로 배출해주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "내용물을 비우고, 비닐 등을 제거 후 찌그러뜨려 뚜껑을 닫아 가급적 투명 페트병류로 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "아니오",
-                                    "result": "내용물을 비우고, 비닐 등을 제거 후 찌그러뜨려 뚜껑을 닫아 플라스틱류로 배출해주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "내용물을 비우고, 비닐 등을 제거 후 찌그러뜨려 뚜껑을 닫아 플라스틱류로 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 }
                             ]
                         }
                     },
                     {
                         "name": "플라스틱 용기",
-                        "result": "내용물을 비우고, 비닐 등을 제거 후 플라스틱류로 배출해주세요."
+                        "result": {
+                            "name": "",
+                            "content": "내용물을 비우고, 비닐 등을 제거 후 플라스틱류로 배출해주세요.",
+                            "image": "test value"
+                        }
                     }
                 ]
             }
         },
         {
             "name": "비닐",
-            "result": "내용물을 비우고, 한 봉투에 담아 버려주세요."
+            "result": {
+                "name": "",
+                "content": "내용물을 비우고, 한 봉투에 담아 버려주세요.",
+                "image": "test value"
+            }
         },
         {
             "name": "스티로폼",
@@ -220,7 +328,11 @@
                 "answers": [
                     {
                         "name": "네",
-                        "result": "가급적이면 구입처로 반납해주세요. 혹은 스티로폼류로 배출해주세요."
+                        "result": {
+                            "name": "",
+                            "content": "가급적이면 구입처로 반납해주세요. 혹은 스티로폼류로 배출해주세요.",
+                            "image": "test value"
+                        }
                     },
                     {
                         "name": "아니오",
@@ -229,11 +341,19 @@
                             "answers": [
                                 {
                                     "name": "네",
-                                    "result": "일반 쓰레기로 버려주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "일반 쓰레기로 버려주세요.",
+                                        "image": "test value"
+                                    }
                                 },
                                 {
                                     "name": "아니오",
-                                    "result": "내용물을 비우고, 스티로품류로 배출해주세요."
+                                    "result": {
+                                        "name": "",
+                                        "content": "내용물을 비우고, 스티로품류로 배출해주세요.",
+                                        "image": "test value"
+                                    }
                                 }
                             ]
                         }
@@ -248,15 +368,27 @@
                 "answers": [
                     {
                         "name": "부직포",
-                        "result": "일반 쓰레기로 버려주세요."
+                        "result": {
+                            "name": "",
+                            "content": "일반 쓰레기로 버려주세요.",
+                            "image": "test value"
+                        }
                     },
                     {
                         "name": "옷",
-                        "result": "폐의류 전용수거함에 배출해주세요."
+                        "result": {
+                            "name": "",
+                            "content": "폐의류 전용수거함에 배출해주세요.",
+                            "image": "test value"
+                        }
                     },
                     {
                         "name": "천",
-                        "result": "일반 쓰레기로 버려주세요."
+                        "result": {
+                            "name": "",
+                            "content": "일반 쓰레기로 버려주세요.",
+                            "image": "test value"
+                        }
                     }
                 ]
             }
