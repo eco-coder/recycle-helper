@@ -17,18 +17,20 @@ const ResultCard: React.FC<ResultCardProps> = (props) => {
 
     return (
         <>
-            <span className={styles.arrow_button} onClick={onUp} />
-            <div className={styles.container_result}>
-                <div className={styles.image_result}>
-                    {/* 238px 모바일 부분 */}
-                    <Image src={sampleImg} alt="sample" layout="fill" />
+            <div className={styles.container__result}>
+                <span className={styles.arrow_button} onClick={onUp} />
+                <div className={styles.container_result}>
+                    <div className={styles.image_result}>
+                        {/* 238px 모바일 부분 */}
+                        <Image src={sampleImg} alt="sample" layout="fill" />
+                    </div>
+                    <div className={styles.context_result}>
+                        <h1>{result.name}</h1>
+                        <div>{result.content}</div>
+                    </div>
                 </div>
-                <div className={styles.context_result}>
-                    <h1>{result.name}</h1>
-                    <div>{result.content}</div>
-                </div>
+                <span className={styles.arrow_button} onClick={onInit} />
             </div>
-            <span className={styles.arrow_button} onClick={onInit} />
         </>
     )
 }
