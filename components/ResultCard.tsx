@@ -29,7 +29,7 @@ const ResultCard: React.FC<ResultCardProps> = (props) => {
                         <div>{result.content}</div>
                     </div>
                 </div>
-                <span className={styles.arrow_button} onClick={onInit} />
+                <span className={styles.fonts__button} onClick={onInit} >다시하기</span>
             </div>
         </>
     )
