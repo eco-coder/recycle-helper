@@ -115,7 +115,7 @@ const MainPage = () => {
               <ResultCard
                 result={v as Result}
                 onUp={clickUpEvent}
-                onInit={() => { }}
+                onInit={clickDownEvent}
               />
             }
           </section>

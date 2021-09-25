@@ -2,6 +2,7 @@ import { Answer, Result } from "../constants/types";
 import React, { useCallback } from "react";
 
 import Image from 'next/image'
+import sampleImg from '../public/images/man-4603859_1920.png'
 import styles from "../styles/ResultCard.module.sass";
 
 interface ResultCardProps {
@@ -16,18 +17,20 @@ const ResultCard: React.FC<ResultCardProps> = (props) => {
 
     return (
         <>
-            <span className={styles.arrow_button} onClick={onUp} />
-            <div className={styles.container_result}>
-                <div className={styles.image_result}>
-                    {/* 238px 모바일 부분 */}
-                    {/* <Image src={result.image} alt="sample" layout="fill" /> */}
+            <div className={styles.container__result}>
+                <span className={styles.arrow_button} onClick={onUp} />
+                <div className={styles.container_result}>
+                    <div className={styles.image_result}>
+                        {/* 238px 모바일 부분 */}
+                        <Image src={sampleImg} alt="sample" layout="fill" />
+                    </div>
+                    <div className={styles.context_result}>
+                        <h1>{result.name}</h1>
+                        <div>{result.content}</div>
+                    </div>
                 </div>
-                <div className={styles.context_result}>
-                    <h1>{result.name}</h1>
-                    <div>{result.content}</div>
-                </div>
+                <span className={styles.fonts__button} onClick={onInit} >다시하기</span>
             </div>
-            <span className={styles.arrow_button} onClick={onInit} />
         </>
     )
 }
