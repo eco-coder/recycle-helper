@@ -47,27 +47,26 @@ const MainPage = () => {
   }, [sections, count])
 
 
-  const clickDownEvent = useCallback(() => {
-    if (count < sections.length - 1) {
-      setCount(count + 1)
-    } else {
-      setCount(0)
-    }
-  }, [count, sections])
+  const onDown = useCallback(() => {
+    setCount(prev => prev + 1)
+  }, [])
 
-  const clickUpEvent = useCallback(() => {
-    if (count > 0) {
-      setCount(count - 1)
-    } else {
-      setCount(sections.length - 1)
-    }
-  }, [count, sections])
+  const onUp = useCallback(() => {
+    setCount(prev => prev - 1)
+  }, [])
 
   const onSelect = useCallback((answer: Answer, deps: number) => {
     const newSelectedAction = selectedAnswers.filter(_ => true)
     newSelectedAction[deps] = answer
     setSelectedAnswers(newSelectedAction)
   }, [selectedAnswers])
+
+  const onInit = useCallback(() => {
+    setCount(0)
+    setTimeout(() => {
+      setSelectedAnswers([])
+    }, 1000)
+  }, [])
 
 
   return (
@@ -92,7 +91,7 @@ const MainPage = () => {
           <h1 >분리배출 도우미</h1>
           <div>
             <span>시작하기</span>
-            <span className={styles.arrow_button} onClick={clickDownEvent} />
+            <span className={styles.arrow_button} onClick={onDown} />
           </div>
         </div>
       </section >
@@ -108,14 +107,14 @@ const MainPage = () => {
                 deps={i}
                 selectedAnswer={selectedAnswers[i]}
                 onSelect={onSelect}
-                onUp={clickUpEvent}
-                onDown={clickDownEvent}
+                onUp={onUp}
+                onDown={onDown}
               />
               :
               <ResultCard
                 result={v as Result}
-                onUp={clickUpEvent}
-                onInit={clickDownEvent}
+                onUp={onUp}
+                onInit={onInit}
               />
             }
           </section>
