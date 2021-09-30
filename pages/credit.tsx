@@ -3,13 +3,11 @@ import React from 'react'
 
 const credit = () => {
     return (
-        <Layout>
-            <pre>
-                {`khhandrea
+        <pre>
+            {`khhandrea
 KoreanThinker
 YunInSoo`}
-            </pre>
-        </Layout>
+        </pre>
     )
 }
 
