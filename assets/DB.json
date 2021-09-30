@@ -44,7 +44,7 @@
                                                 "name": "감열지예요",
                                                 "result": {
                                                     "name": "감열지 영수증",
-                                                    "content": "일반 쓰레기로 벼려주세요.",
+                                                    "content": "일반 쓰레기로 버려주세요.",
                                                     "image": "bill"
                                                 }
                                             }
@@ -118,7 +118,7 @@
                                 {
                                     "name": "키친타올",
                                     "question": {
-                                        "name": "물 외에 대른 것이 묻어있나요?",
+                                        "name": "물 외에 다른 것이 묻어있나요?",
                                         "answers": [
                                             {
                                                 "name": "네",
@@ -147,7 +147,7 @@
                         "result": {
                             "name": "나무, 식물",
                             "content": "일반 쓰레기로 버려주세요.",
-                            "image": "test value"
+                            "image": "wood"
                         }
                     }
                 ]
@@ -229,7 +229,7 @@
                                                 "result": {
                                                     "name": "재사용 가능한 유리병",
                                                     "content": "근처 슈퍼, 대형마트 등의 소매점에 반환할 수 있습니다! 혹은 유리병류로 배출해주세요.",
-                                                    "image": "reusableGlass"
+                                                    "image": "reusableGlassBottle"
                                                 }
                                             },
                                             {
@@ -280,7 +280,7 @@
                                     "result": {
                                         "name": "투명한 페트병",
                                         "content": "내용물을 비우고, 비닐 등을 제거 후 찌그러뜨려 뚜껑을 닫아 가급적 투명 플라스틱류로 배출해주세요.",
-                                        "image": "claerPet"
+                                        "image": "clearPet"
                                     }
                                 }
                             ]
@@ -291,7 +291,7 @@
                         "result": {
                             "name": "플라스틱 용기",
                             "content": "내용물을 비우고, 비닐 등을 제거 후 플라스틱류로 배출해주세요.",
-                            "image": "test value"
+                            "image": "plasticContainer"
                         }
                     }
                 ]
@@ -302,7 +302,7 @@
             "result": {
                 "name": "비닐",
                 "content": "내용물을 비우고, 한 봉투에 담아 버려주세요.",
-                "image": "test value"
+                "image": "vinyl"
             }
         },
         {
@@ -315,7 +315,7 @@
                         "result": {
                             "name": "전자제품 완충재",
                             "content": "가급적이면 구입처로 반납해주세요. 혹은 스티로폼류로 배출해주세요.",
-                            "image": "test value"
+                            "image": "electricContainer"
                         }
                     },
                     {
@@ -328,7 +328,7 @@
                                     "result": {
                                         "name": "오염된 스티로폼",
                                         "content": "일반 쓰레기로 버려주세요.",
-                                        "image": "test value"
+                                        "image": "dirtyStyrofoam"
                                     }
                                 },
                                 {
@@ -336,7 +336,7 @@
                                     "result": {
                                         "name": "스티로폼",
                                         "content": "내용물을 비우고, 스티로품류로 배출해주세요.",
-                                        "image": "test value"
+                                        "image": "styrofoam"
                                     }
                                 }
                             ]
@@ -355,7 +355,7 @@
                         "result": {
                             "name": "부직포",
                             "content": "일반 쓰레기로 버려주세요.",
-                            "image": "test value"
+                            "image": "felt"
                         }
                     },
                     {
@@ -363,7 +363,7 @@
                         "result": {
                             "name": "옷",
                             "content": "폐의류 전용수거함에 배출해주세요.",
-                            "image": "test value"
+                            "image": "clothes"
                         }
                     },
                     {
@@ -371,7 +371,7 @@
                         "result": {
                             "name": "천",
                             "content": "일반 쓰레기로 버려주세요.",
-                            "image": "test value"
+                            "image": "cloth"
                         }
                     }
                 ]
