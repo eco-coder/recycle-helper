@@ -1,12 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import { Answer, Question, Result } from "../constants/types";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useWheel, { useWheelTypes } from "../hooks/useWheelSect";
 
 import DB from '../assets/DB.json'
-import Image from 'next/image'
 import QuestionCard from "../components/QuestionCard";
 import ResultCard from "../components/ResultCard";
-import imageT from '../public/images/eco_icon.png'
 import styles from "../styles/Home.module.sass";
 
 const MainPage = () => {
@@ -34,6 +33,7 @@ const MainPage = () => {
 
   useEffect(() => {
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     bannerImage = document.getElementById('imageContainer');
     if (sections && bannerImage) {
       if (count > 0) {
@@ -75,7 +75,7 @@ const MainPage = () => {
         <div >
           <div className={styles.container_section}>
             <div id="imageContainer" className={styles.img_position}>
-              <Image layout='fill' src={imageT} alt="image" />
+              <img width={'100%'} src='images/eco_icon.png' alt="image" />
             </div>
             <svg className={styles.svg_position} width="802" height="531" viewBox="0 0 802 531" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M200.329 15.5147C96.0448 -50.8089 0 116.976 0 116.976C107.986 244.757 120.631 318.088 44.9268 452.354C131.437 520.452 176.987 534.855 254.462 530.202C370.842 434.529 425.005 411.014 506.715 409.555C650.197 416.347 688.064 441.246 742.397 492.2C799.655 468.065 818.15 449.246 786.956 390.739C753.297 295.462 722.004 252.593 638.55 199.622C625.438 229.849 616.153 242.373 586.626 235.041C522.055 194.555 506.705 172.59 546.855 135.793C446.797 127.93 370.801 101.452 200.329 15.5147Z" fill="#92C835" />

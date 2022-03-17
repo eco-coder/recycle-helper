@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import { Answer, Question } from '../constants/types'
 import React, { useCallback } from 'react'
 
-import Image from 'next/image'
 import styles from '../styles/QuestionCard.module.sass'
 
 interface QuestionCardProps {
@@ -25,8 +25,8 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
     return (
         <div className={styles.container}>
             <button onClick={onUp} className={styles.upButton}>
-                <Image
-                    src="/images/upArrow.png"
+                <img
+                    src="images/upArrow.png"
                     alt="home"
                     width={51}
                     height={29}
@@ -36,8 +36,8 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                 <div style={{ marginBottom: 60, textAlign: 'center' }} >
                     <div className={styles.question}>{props.question.name}</div>
                     <div className={styles.character}>
-                        <Image
-                            src="/images/cat.png"
+                        <img
+                            src="images/cat.png"
                             alt="cat"
                             width={144}
                             height={144}
@@ -61,8 +61,8 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
                 </div>
             </div>
             {selectedAnswer && <button onClick={onDown} className={styles.downButton}>
-                <Image
-                    src="/images/downArrow.png"
+                <img
+                    src="images/downArrow.png"
                     alt="home"
                     width={51}
                     height={29}
